@@ -1,7 +1,15 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute } from 'vue-router';
+import BottomNavigation from './components/navigation/BottomNavigation.vue';
+const route = useRoute();
 </script>
 
 <template>
-  <RouterView />
+  <div
+    class="app-shell"
+    :class="{ 'has-navigation': route.path !== '/login' }"
+  >
+    <RouterView />
+    <BottomNavigation v-if="route.path !== '/login'" />
+  </div>
 </template>
