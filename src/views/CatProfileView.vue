@@ -88,7 +88,7 @@ function saveProfile() {
               :size="18"
             /></span>
           </div>
-          <h1>{{ cat.name }}</h1>
+          <h2>{{ cat.name }}</h2>
           <p>{{ cat.sex }} <span aria-hidden="true">·</span> {{ cat.breed }}</p>
           <span class="profile-age">{{ cat.age }}</span>
         </section>
@@ -268,7 +268,7 @@ function saveProfile() {
           name="cat"
           :size="36"
         />
-        <h1>Cat not found</h1>
+        <h2>Cat not found</h2>
         <p>Choose one of your cats from the dashboard.</p>
         <RouterLink
           to="/dashboard"
@@ -286,12 +286,12 @@ function saveProfile() {
 .profile-hero {
   padding: 28px 0 25px;
   text-align: center;
-  h1 { margin: 14px 0 5px; font-size: 29px; font-weight: 650; letter-spacing: -0.03em; overflow-wrap: anywhere; }
+  h2 { margin: 14px 0 5px; font-size: 29px; font-weight: 650; letter-spacing: -0.03em; overflow-wrap: anywhere; }
   p { margin: 0 0 8px; color: var(--text-muted); font-size: 12px; }
 }
 .profile-avatar { position: relative; display: inline-flex; padding: 5px; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); }
 .profile-paw { position: absolute; right: 0; bottom: 2px; display: grid; width: 31px; height: 31px; place-items: center; border: 3px solid var(--background); border-radius: 50%; background: var(--primary); color: var(--surface); }
-.profile-age { font-size: 11px; color: var(--secondary); }
+.profile-age { font-size: 11px; color: var(--secondary-ink); }
 .profile-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .profile-stat {
   padding: 17px 15px;
@@ -303,7 +303,7 @@ function saveProfile() {
 }
 .profile-health { margin-top: 27px; }
 .profile-section-title { display: flex; gap: 8px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.health-status { display: inline-flex; align-items: center; gap: 5px; color: var(--medical); font-size: 10px; span { width: 5px; height: 5px; border-radius: 50%; background: currentColor; } }
+.health-status { display: inline-flex; align-items: center; gap: 5px; color: var(--medical-ink); font-size: 10px; span { width: 5px; height: 5px; border-radius: 50%; background: var(--medical); } }
 .health-card { padding: 0 15px; }
 .health-row {
   display: flex;
@@ -322,7 +322,7 @@ function saveProfile() {
 .medication-icon { color: var(--primary-dark); background: color-mix(in srgb, var(--primary) 11%, var(--surface)); }
 .health-event-icon { color: var(--health); background: color-mix(in srgb, var(--health) 11%, var(--surface)); }
 .medical-icon { color: var(--medical); background: color-mix(in srgb, var(--medical) 11%, var(--surface)); }
-.status-tag { padding: 4px 6px; color: var(--medical); background: color-mix(in srgb, var(--medical) 10%, var(--surface)); border-radius: 6px; font-size: 9px; }
+.status-tag { padding: 4px 6px; color: var(--medical-ink); background: color-mix(in srgb, var(--medical) 10%, var(--surface)); border-radius: 6px; font-size: 9px; }
 .profile-add { display: flex; gap: 7px; justify-content: center; margin-top: 18px; }
 .profile-note { margin: 20px 6px 0; font-size: 11px; text-align: center; line-height: 1.8; }
 </style>

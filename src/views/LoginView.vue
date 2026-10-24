@@ -122,8 +122,8 @@ function viewDemo() {
 .brand-mark { width: 70px; height: 70px; border-radius: 24px; background: var(--primary-soft); color: var(--primary-dark); margin: auto; display: grid; place-items: center; transform: rotate(-5deg); svg { transform: rotate(5deg); } }
 .login-card { padding: 28px 23px 23px; h2 { font-size: 25px; margin: 11px 0 7px; letter-spacing: -.7px; } > p { font-size: 13px; margin: 0; } .eyebrow { font-size: 8px; letter-spacing: 1.3px; } }
 .login-form { margin-top: 27px; gap: 18px; .primary-button { margin-top: 5px; justify-content: center; gap: 10px; } }
-.viewer-note { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 18px; display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--secondary); p { font-size: 11px; line-height: 1.8; margin: 0; } button { font-size: 12px; padding: 0; } }
-.login-footnote { text-align: center; font-size: 12px; color: var(--secondary); margin: 29px 0 9px; }
+.viewer-note { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 18px; display: flex; justify-content: center; align-items: center; gap: 10px; color: var(--secondary-ink); p { font-size: 11px; line-height: 1.8; margin: 0; } button { font-size: 12px; padding: 0; } }
+.login-footnote { text-align: center; font-size: 12px; color: var(--secondary-ink); margin: 29px 0 9px; }
 .prototype-note { text-align: center; font-size: 10px; color: var(--text-muted); margin: 0; }
 @media (max-height: 750px) { .login-page { padding-top: 35px; } .login-brand { margin-bottom: 25px; } }
 </style>

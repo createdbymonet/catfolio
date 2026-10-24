@@ -108,6 +108,6 @@ const groups = computed(() => {
 .timeline-filters { display: grid; grid-template-columns: repeat(5,1fr); gap: 7px; .chip { padding: 9px 8px; justify-content: center; } }
 .timeline-group { margin-top: 27px; }
 .date-heading { font-size: 13px; display: flex; align-items: center; gap: 10px; margin: 0 0 12px; span { color: var(--text-muted); font-size: 10px; font-weight: 400; } }
-.timeline-end { text-align: center; font-size: 10px; color: var(--secondary); margin: 29px 0 8px; }
+.timeline-end { text-align: center; font-size: 10px; color: var(--secondary-ink); margin: 29px 0 8px; }
 .header-add { color: var(--primary-dark); background: var(--primary-soft); border-radius: 50%; width: 33px; height: 33px; }
 </style>

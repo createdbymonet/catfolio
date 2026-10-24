@@ -26,26 +26,63 @@ function toggleFavorite(id: string): void {
   if (memory) memory.favorite = !memory.favorite;
 }
 
+function removeLinkedMemory(eventId: string): void {
+  const index = memories.value.findIndex((memory) => memory.eventId === eventId);
+  if (index !== -1) memories.value.splice(index, 1);
+}
+
+function syncEventMemory(event: CatEvent): void {
+  if (event.type !== 'memory') {
+    removeLinkedMemory(event.id);
+    return;
+  }
+
+  const fallbackImage = event.catId === 'hana' ? 2 : event.catId === 'mugi' ? 3 : 1;
+  const fields = {
+    catId: event.catId,
+    title: event.title,
+    date: event.date,
+    memo: event.memo,
+    image: event.image || `/images/memory-${fallbackImage}.svg`,
+  };
+  const memory = memories.value.find((item) => item.eventId === event.id);
+  if (memory) {
+    // Keep the existing ID and favorite when editing the timeline record.
+    Object.assign(memory, fields);
+  } else {
+    memories.value.unshift({
+      ...fields, id: `memory-${event.id}`, eventId: event.id, favorite: false,
+    });
+  }
+}
+
 function saveEvent(data: Omit<CatEvent, 'id'>, id?: string): CatEvent {
   const existing = id ? events.value.find((event) => event.id === id) : undefined;
   if (existing) {
     Object.assign(existing, data);
+    syncEventMemory(existing);
     return existing;
   }
 
   const event: CatEvent = { ...data, id: `event-local-${Date.now()}-${++eventSequence}` };
   events.value.unshift(event);
+  syncEventMemory(event);
   return event;
 }
 
 function deleteEvent(id: string): void {
   const index = events.value.findIndex((event) => event.id === id);
   if (index !== -1) events.value.splice(index, 1);
+  removeLinkedMemory(id);
 }
 
 function updateMemory(id: string, changes: Partial<Pick<Memory, 'title' | 'memo'>>): void {
   const memory = memories.value.find((item) => item.id === id);
-  if (memory) Object.assign(memory, changes);
+  if (memory) {
+    Object.assign(memory, changes);
+    const event = events.value.find((item) => item.id === memory.eventId);
+    if (event) Object.assign(event, changes);
+  }
 }
 
 function updateCat(id: string, changes: Partial<Pick<Cat, 'name' | 'weight' | 'nextCheckup'>>): void {

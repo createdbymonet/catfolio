@@ -23,7 +23,7 @@ function removeEvent() {
 </script>
 
 <template>
-  <div class="page event-detail-page">
+  <main class="page event-detail-page">
     <AppHeader
       title="Event detail"
       back-to="/timeline"
@@ -171,7 +171,7 @@ function removeEvent() {
         </RouterLink>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
@@ -186,11 +186,11 @@ function removeEvent() {
 .event-date span { padding: 0 6px; }
 .event-info { padding-top: 4px; padding-bottom: 4px; }
 .cat-meta { display: flex; align-items: center; gap: 8px; }
-.severity-chip { display: inline-flex; padding: 5px 10px; border-radius: 20px; background: color-mix(in srgb, var(--health) 12%, var(--surface)); color: var(--health); font-size: 12px; text-transform: capitalize; }
-.severity-moderate { background: color-mix(in srgb, var(--primary) 17%, var(--surface)); color: var(--primary-dark); }
-.severity-severe { background: var(--health); color: var(--surface); }
+.severity-chip { display: inline-flex; padding: 5px 10px; border-radius: 20px; background: color-mix(in srgb, var(--health) 12%, var(--surface)); color: var(--health-ink); font-size: 12px; text-transform: capitalize; }
+.severity-moderate { background: color-mix(in srgb, var(--primary) 17%, var(--surface)); color: var(--action-ink); }
+.severity-severe { background: var(--health-ink); color: var(--surface); }
 .event-memo { margin: 12px 0 0; font-size: 14px; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
 .event-photo-section h2 { margin: 0 0 12px; }
 .event-photo { display: block; width: 100%; max-height: 360px; border-radius: 20px; object-fit: cover; }
-.delete-event { width: 100%; margin-top: 8px; border-color: color-mix(in srgb, var(--health) 55%, var(--border)); color: var(--health); }
+.delete-event { width: 100%; margin-top: 8px; border-color: color-mix(in srgb, var(--health) 55%, var(--border)); color: var(--health-ink); }
 </style>

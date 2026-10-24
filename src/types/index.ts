@@ -35,6 +35,7 @@ export interface CatEvent {
 
 export interface Memory {
   id: string;
+  eventId?: string;
   catId: string;
   title: string;
   date: string;

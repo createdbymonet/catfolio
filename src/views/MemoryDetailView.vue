@@ -128,9 +128,9 @@ function saveMemory() {
             <p class="eyebrow">
               A moment to keep
             </p>
-            <h1 class="page-title">
+            <h2 class="page-title">
               {{ memory.title }}
-            </h1>
+            </h2>
             <p class="memory-date muted">
               <AppIcon
                 name="calendar"
@@ -186,7 +186,7 @@ function saveMemory() {
           name="memory"
           :size="36"
         />
-        <h1>Memory not found</h1>
+        <h2>Memory not found</h2>
         <p>This memory is no longer in this demo session.</p>
         <RouterLink
           to="/memories"
@@ -209,11 +209,11 @@ function saveMemory() {
 }
 .photo-heart { position: absolute; right: 14px; bottom: 14px; width: 44px; height: 44px; border-radius: 50%; background: var(--surface); box-shadow: 0 2px 10px color-mix(in srgb, var(--text) 10%, transparent); }
 .photo-heart.is-favorite { color: var(--health); :deep(svg) { fill: currentColor; } }
-.memory-heading { margin: 24px 0 20px; .eyebrow { margin-bottom: 8px; } h1 { margin: 0; font-size: 26px; overflow-wrap: anywhere; } }
+.memory-heading { margin: 24px 0 20px; .eyebrow { margin-bottom: 8px; } h2 { margin: 0; font-size: 26px; overflow-wrap: anywhere; } }
 .memory-date { display: flex; align-items: center; gap: 7px; margin: 11px 0 0; font-size: 12px; }
 .memory-cat { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 600; font-size: 13px; > span { min-width: 0; overflow-wrap: anywhere; } > :last-child { margin-left: auto; flex-shrink: 0; } }
 .memory-memo { margin-top: 22px; p { margin: 12px 0 0; color: var(--text-muted); font-size: 13px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; } }
 .memory-tags { margin-top: 18px; .chip { display: inline-flex; gap: 6px; align-items: center; text-decoration: none; } }
-.favorite-tag { color: var(--health); border-color: color-mix(in srgb, var(--health) 40%, transparent); background: color-mix(in srgb, var(--health) 7%, var(--surface)); }
+.favorite-tag { color: var(--health-ink); border-color: color-mix(in srgb, var(--health) 40%, transparent); background: color-mix(in srgb, var(--health) 7%, var(--surface)); svg { color: var(--health); } }
 .memory-edit { margin-top: 22px; }
 </style>

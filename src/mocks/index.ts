@@ -83,7 +83,7 @@ export const mockEvents: CatEvent[] = [
 
 export const mockMemories: Memory[] = [
   {
-    id: 'memory-sunbeam', catId: 'sumi', title: 'A little moment of sunshine', date: '2026-10-24T09:30',
+    id: 'memory-sunbeam', eventId: 'event-memory', catId: 'sumi', title: 'A little moment of sunshine', date: '2026-10-24T09:30',
     memo: 'A slow morning, a warm sunbeam, and her favorite spot by the window. These are the little moments I want to remember.',
     favorite: true, image: '/images/memory-1.svg',
   },

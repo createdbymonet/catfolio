@@ -62,7 +62,7 @@ const quickActions: {type: EventType; label: string}[] = [{type: 'medication',la
         >
           <CatAvatar
             :cat="cat"
-            :size="44"
+            :size="34"
           /><span>{{ cat.name }}</span><AppIcon
             v-if="activeCatId === cat.id"
             name="check"
@@ -148,12 +148,12 @@ const quickActions: {type: EventType; label: string}[] = [{type: 'medication',la
 .greeting { margin: 15px 0 25px; .eyebrow { display: flex; align-items: center; gap: 6px; text-transform: uppercase; font-size: 9px; letter-spacing: 1.25px; } h1 { font-size: 29px; letter-spacing: -.9px; margin: 10px 0 7px; line-height: 1.2; overflow-wrap: anywhere; } > p:last-child { color: var(--text-muted); font-size: 12px; margin: 0; } }
 .greeting-dot { color: var(--primary); }
 .cat-selector { display: flex; gap: 10px; margin-bottom: 23px; }
-.cat-choice { position: relative; flex: 1; display: flex; align-items: center; gap: 8px; padding: 9px 8px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); color: var(--text-muted); font-size: 12px; font-weight: 600; .cat-avatar { width: 34px !important; height: 34px !important; } &.is-active { border-color: var(--primary); background: var(--primary-pale); color: var(--text); box-shadow: 0 0 0 1px var(--primary); } }
+.cat-choice { position: relative; min-width: 0; flex: 1; display: flex; align-items: center; gap: 8px; padding: 9px 8px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); color: var(--text-muted); font-size: 12px; font-weight: 600; > span { min-width: 0; overflow-wrap: anywhere; } &.is-active { border-color: var(--primary); background: var(--primary-pale); color: var(--text); box-shadow: 0 0 0 1px var(--primary); } }
 .cat-choice-check { position: absolute; bottom: 6px; left: 32px; background: var(--primary-dark); color: var(--surface); border: 2px solid var(--surface); border-radius: 50%; width: 15px; height: 15px; padding: 1px; }
 .today-care { padding: 18px 17px 5px; .section-heading { margin-bottom: 3px; } h2 { font-size: 15px; } .for-cat { display: block; font-size: 10px; color: var(--text-muted); font-weight: 400; margin-top: 5px; } }
-.care-progress { font-size: 9px; color: var(--primary-dark); background: var(--primary-soft); border-radius: 20px; padding: 6px 8px; &.complete { color: var(--medical); background: var(--medical-soft); } }
-.care-finished { display: flex; align-items: center; gap: 5px; color: var(--medical); font-size: 10px; padding-bottom: 6px; }
+.care-progress { font-size: 9px; color: var(--action-ink); background: var(--primary-soft); border-radius: 20px; padding: 6px 8px; &.complete { color: var(--medical-ink); background: var(--medical-soft); } }
+.care-finished { display: flex; align-items: center; gap: 5px; color: var(--medical-ink); font-size: 10px; padding-bottom: 6px; }
 .quick-section,.recent-section { margin-top: 27px; }
 .quick-add-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; }
-.dashboard-footer { display: flex; justify-content: center; align-items: center; gap: 6px; color: var(--secondary); font-size: 10px; margin: 25px 0 0; }
+.dashboard-footer { display: flex; justify-content: center; align-items: center; gap: 6px; color: var(--secondary-ink); font-size: 10px; margin: 25px 0 0; }
 </style>

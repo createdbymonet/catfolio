@@ -22,7 +22,7 @@ defineEmits<{ toggle: [id: string] }>();
         v-if="task.done"
         name="check"
         :size="15"
-      />{{ task.done ? 'Done' : 'Done' }}
+      />Done
     </button>
   </div>
 </template>

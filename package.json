@@ -10,9 +10,7 @@
     "typecheck": "pnpm type-check",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "pnpm build && wrangler deploy",
-    "deploy:development": "pnpm build && wrangler deploy --env development",
-    "deploy:production": "pnpm build && wrangler deploy --env production"
+    "deploy": "pnpm build && wrangler deploy"
   },
   "dependencies": {
     "vue": "^3.5.44",

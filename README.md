@@ -38,6 +38,8 @@ Any non-empty username and password opens the dashboard. The username becomes th
 
 All changes exist only in shared Vue reactive state for the current page session. Refreshing the page restores the seed records, care tasks, favorites, and display name. There are no backend requests, database writes, localStorage records, or cloud uploads.
 
+Memory events also appear in Memories. Linked title and memo edits stay in sync; deleting the event or changing its type removes its gallery entry. Without a photo, a local illustration is used.
+
 The seeded timeline represents **October 24, 2026**, with records from that day and October 23. Its Today/Yesterday labels use that fixed demo date. Form date/time values use the browser's local time; they are not converted into a server timezone. Photo selection previews a file locally and does not persist it after a refresh.
 
 Cat and memory imagery uses local illustrative SVG placeholders in `public/images/`, so the UI has no remote image dependency. The palette is centralized in `src/styles/main.scss`.
@@ -123,22 +125,21 @@ The reference is [Catfolio in Figma](https://www.figma.com/design/Q9OfBVQjro4pom
 
 ## Deployment
 
-The existing Worker, Wrangler configuration, pnpm setup, and GitHub Actions workflows are preserved. Cloudflare Workers serves the Vite build from `dist/`; the existing `assets.not_found_handling` setting provides single-page application fallback for direct route loads. No routing-related infrastructure change was required.
+Cloudflare Workers serves the Vite build from `dist/` through the production Worker `catfolio`. The top-level Wrangler configuration retains the Worker entry point, compatibility date, `ASSETS` binding, and single-page application fallback for direct route loads. Production is the only Cloudflare deployment target.
 
-Manual deployment commands build before deploying:
+The sole manual deployment command builds before deploying to `catfolio`:
 
 ```bash
-pnpm deploy:development
-pnpm deploy:production
+pnpm deploy
 ```
 
-`pnpm deploy` uses the default `catfolio` Worker configuration, which shares the production Worker name.
+- `main` is the normal development/source branch. Pushes and merges to `main` run CI checks and do not deploy to Cloudflare.
+- Pushes to `release` build the Vue application and deploy `catfolio`, using the GitHub `production` environment.
+- Pull requests and pushes to `main` retain CI lint and build checks, including type-checking.
 
-- Pushes to `main` deploy the `development` environment to `catfolio-development`.
-- Pushes to `release` deploy the `production` environment to `catfolio`.
-- Pull requests and pushes to `main` run CI lint and build checks, including type-checking.
+The production workflow retains the existing `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` GitHub secrets. The unused GitHub `development` environment can be removed manually from repository settings after reviewing any stored secrets or protection rules; repository cleanup does not delete remote environments or Workers.
 
-Deployment workflows retain the existing `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` GitHub secrets. No deployment is needed to run or inspect the prototype locally.
+Local development remains `pnpm dev` through Vite on localhost and does not require a Cloudflare deployment.
 
 ## Future backend work
 

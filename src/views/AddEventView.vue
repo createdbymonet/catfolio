@@ -115,7 +115,7 @@ function submit() {
 </script>
 
 <template>
-  <div class="page add-event-page">
+  <main class="page add-event-page">
     <AppHeader
       :title="editId ? 'Edit event' : 'Add event'"
       :back-to="existingEvent ? `/events/${existingEvent.id}` : '/dashboard'"
@@ -374,7 +374,7 @@ function submit() {
         /> {{ editId ? 'Save changes' : 'Save event' }}
       </button>
     </form>
-  </div>
+  </main>
 </template>
 
 <style scoped lang="scss">
@@ -385,12 +385,13 @@ function submit() {
 .cat-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .cat-option { position: relative; display: flex; align-items: center; justify-content: center; gap: 7px; min-width: 0; padding: 12px 5px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
 .cat-option.selected { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 9%, var(--surface)); }
+.cat-option > span { min-width: 0; overflow-wrap: anywhere; }
 .selection-check { position: absolute; top: 5px; right: 5px; color: var(--primary-dark); }
 .event-type-options { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .type-option { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 80px; padding: 10px 3px; border: 1px solid var(--border); border-radius: 15px; background: var(--surface); color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; }
-.type-option.selected { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 11%, var(--surface)); color: var(--primary-dark); }
+.type-option.selected { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 11%, var(--surface)); color: var(--action-ink); }
 .optional-label, .required-label { float: right; color: var(--muted); font-size: 11px; font-weight: 400; }
-.photo-picker { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 126px; padding: 20px; border: 1px dashed var(--border); border-radius: 18px; background: var(--surface); color: var(--secondary); cursor: pointer; }
+.photo-picker { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 126px; padding: 20px; border: 1px dashed var(--border); border-radius: 18px; background: var(--surface); color: var(--secondary-ink); cursor: pointer; }
 .photo-picker strong { font-size: 13px; font-weight: 600; }
 .photo-picker span { font-size: 11px; }
 .photo-input { width: 100%; margin-top: 8px; color: var(--muted); font: inherit; font-size: 11px; }

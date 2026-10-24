@@ -146,5 +146,5 @@ const visibleMemories = computed(() => memories.value.flatMap((memory) => {
 .favorite-filter { display: inline-flex; gap: 6px; align-items: center; }
 .memories-count { margin: 20px 0 12px; font-size: 11px; letter-spacing: 0.02em; }
 .memories-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
-.memories-footer { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 25px 0 3px; color: var(--secondary); font-size: 11px; }
+.memories-footer { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 25px 0 3px; color: var(--secondary-ink); font-size: 11px; svg { color: var(--secondary); } }
 </style>
