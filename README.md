@@ -130,3 +130,7 @@ GitHub Actions installs dependencies with the frozen pnpm lockfile and builds be
 - Pull requests and pushes to `main` run CI lint and build checks; the build includes type-checking.
 
 Deployment workflows use the existing `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` GitHub secrets.
+
+## License
+
+Catfolio is licensed under the [MIT License](./LICENSE).
